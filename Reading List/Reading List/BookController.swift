@@ -83,6 +83,7 @@ class BookController: Codable {
         
     }
     
+    
     func removeBook(named book: Book) {
       guard let index = books.firstIndex(of: book) else { return }
       books.remove(at: index)
@@ -92,6 +93,17 @@ class BookController: Codable {
        
     }
 
+
+    func updateHasBeenRead(for book: Book) {
+        var hasBeenRead = false
+        switch hasBeenRead{
+        case true:
+            hasBeenRead.toggle()
+        default:
+            hasBeenRead.toggle()
+        }
+    }
 }
+
 
 
