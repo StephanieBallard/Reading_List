@@ -92,17 +92,33 @@ class BookController: Codable {
         
        
     }
-
-
+    
     func updateHasBeenRead(for book: Book) {
-        var hasBeenRead = false
-        switch hasBeenRead{
-        case true:
-            hasBeenRead.toggle()
-        default:
-            hasBeenRead.toggle()
-        }
+        guard let index = books.firstIndex(of: book) else { return }
+            books[index].hasBeenRead.toggle()
+            
+        saveToPersistanceStore()
+        
     }
+    
+    func updateTitleOrReason(for book: Book) {
+        guard let index = books.firstIndex(of: book) else { return }
+        
+        books[index].title = book.title
+        books[index].reasonToRead = book.reasonToRead
+        
+        saveToPersistanceStore()
+    }
+
+//    func updateHasBeenRead(for book: Book) {
+//        var hasBeenRead = false
+//        switch hasBeenRead{
+//        case true:
+//            hasBeenRead.toggle()
+//        default:
+//            hasBeenRead.toggle()
+//        }
+//    }
 }
 
 
