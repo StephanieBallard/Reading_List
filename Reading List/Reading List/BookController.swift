@@ -13,7 +13,7 @@ class BookController: Codable {
 //    init() {
 //       loadFromPersistentStore()
 //    }
-    
+//
     
     var books: [Book]
     
@@ -29,9 +29,20 @@ class BookController: Codable {
         
     }
     
+//    let digits = [1,4,10,15]
+//    let even = digits.filter { $0 % 2 == 0 }
+    // [4, 10]
+    var readBooks: [Book] {
+        books.filter { (book) -> Bool in
+            return book.hasBeenRead == true
+        }
+    }
     
-    
-    
+    var unreadBooks: [Book] {
+        books.filter { (book) -> Bool in
+            return book.hasBeenRead == false
+        }
+    }
     
     var readingListURL: URL? {
         
@@ -95,7 +106,8 @@ class BookController: Codable {
     
     func updateHasBeenRead(for book: Book) {
         guard let index = books.firstIndex(of: book) else { return }
-            books[index].hasBeenRead.toggle()
+            
+        books[index].hasBeenRead.toggle()
             
         saveToPersistanceStore()
         
