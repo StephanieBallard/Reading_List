@@ -39,6 +39,9 @@
                                                         <constraint firstAttribute="width" secondItem="raT-p6-PRr" secondAttribute="height" multiplier="1:1" id="bH4-WX-GPY"/>
                                                     </constraints>
                                                     <state key="normal" image="checked"/>
+                                                    <connections>
+                                                        <action selector="readButtonTapped:" destination="PfK-Hg-m2s" eventType="touchUpInside" id="qgn-KE-yUx"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -49,6 +52,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="bookTitle" destination="tD7-xW-MYF" id="Ogc-KD-X0v"/>
+                                    <outlet property="readButton" destination="raT-p6-PRr" id="WoZ-sA-DFk"/>
                                     <segue destination="isa-GP-ttP" kind="show" identifier="ShowSegueToDetailView" id="b8q-qn-ewc"/>
                                 </connections>
                             </tableViewCell>
