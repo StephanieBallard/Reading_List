@@ -29,23 +29,12 @@ class BookController: Codable {
         
     }
     
-//    let digits = [1,4,10,15]
-//    let even = digits.filter { $0 % 2 == 0 }
-    // [4, 10]
-//    Inside of the braces you can make your return into one line.
-//    You would return the .filter method on your books variable and filter through the hasBeenRead variable
-//    Pretty similar to this example:
-//    let even = digits.filter { $0 % 2 == 0 }
-//    You start filtering through something inside of the braces next to the word filter and the $0 is a special character that means to filter through whatever variable you attach to it.
-//    Hope that helps and makes sense.
-    
-    
     var readBooks: [Book] {
-        books.filter { $0 .hasBeenRead == true }
+       return books.filter { $0.hasBeenRead == true }
     }
     
     var unreadBooks: [Book] {
-        books.filter { $0 .hasBeenRead == false}
+       return books.filter { $0.hasBeenRead == false}
     }
     
     var readingListURL: URL? {
