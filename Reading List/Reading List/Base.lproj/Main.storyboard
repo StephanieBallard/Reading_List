@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pUZ-yH-NuI">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -25,7 +25,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="164" translatesAutoresizingMaskIntoConstraints="NO" id="fmG-Uh-3Ju">
-                                            <rect key="frame" x="52.5" y="5" width="309" height="50"/>
+                                            <rect key="frame" x="52.666666666666657" y="5" width="309" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tD7-xW-MYF">
                                                     <rect key="frame" x="0.0" y="0.0" width="95" height="50"/>
@@ -63,7 +63,7 @@
                             <outlet property="delegate" destination="vkV-x8-8mD" id="rh1-UE-veT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="IhE-p3-uWd">
+                    <navigationItem key="navigationItem" title="Reading List" id="IhE-p3-uWd">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="xJ3-sV-H7e">
                             <connections>
                                 <segue destination="isa-GP-ttP" kind="show" identifier="ShowSegueAddtoDetailView" id="bkv-d8-zdz"/>
@@ -82,14 +82,43 @@
                     <view key="view" contentMode="scaleToFill" id="3E0-mV-JLo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vqk-pX-kFx">
+                                <rect key="frame" x="20" y="108" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="57y-UA-iMh">
+                                <rect key="frame" x="20" y="162" width="374" height="270"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="ADE-3s-nf1"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vqk-pX-kFx" firstAttribute="leading" secondItem="iRz-Dq-SPB" secondAttribute="leading" constant="20" id="EbU-jp-fla"/>
+                            <constraint firstItem="iRz-Dq-SPB" firstAttribute="trailing" secondItem="vqk-pX-kFx" secondAttribute="trailing" constant="20" id="Jsh-pC-XRE"/>
+                            <constraint firstItem="57y-UA-iMh" firstAttribute="top" secondItem="vqk-pX-kFx" secondAttribute="bottom" constant="20" id="YXz-1z-Kxo"/>
+                            <constraint firstItem="iRz-Dq-SPB" firstAttribute="trailing" secondItem="57y-UA-iMh" secondAttribute="trailing" constant="20" id="nyv-72-yMQ"/>
+                            <constraint firstItem="57y-UA-iMh" firstAttribute="top" secondItem="vqk-pX-kFx" secondAttribute="bottom" constant="20" id="pfY-vF-vXL"/>
+                            <constraint firstItem="vqk-pX-kFx" firstAttribute="top" secondItem="iRz-Dq-SPB" secondAttribute="top" constant="20" id="vfQ-yR-oDi"/>
+                            <constraint firstItem="57y-UA-iMh" firstAttribute="leading" secondItem="iRz-Dq-SPB" secondAttribute="leading" constant="20" id="xb3-pC-kNj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iRz-Dq-SPB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rdG-87-2nb"/>
+                    <navigationItem key="navigationItem" id="rdG-87-2nb">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="jav-hy-Lgf"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCk-9e-2lx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1559" y="143"/>
+            <point key="canvasLocation" x="1557.9710144927537" y="142.63392857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4mj-XU-RTk">
