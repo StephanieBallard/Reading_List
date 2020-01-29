@@ -9,6 +9,8 @@
 import UIKit
 
 class BookTableViewCell: UITableViewCell {
+    
+    var book: Book?
 
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var readButton: UIButton!
@@ -19,6 +21,10 @@ class BookTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    //left off on step 3 on wire things up*****
+    func undateViews() {
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
